@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文化推廣工作坊報名｜Young Young 都來街頭玩</title>
+  <style>
+    :root {
+      --primary-color: #1a365d;
+      --accent-color: #e53e3e;
+      --bg-color: #f7fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --text-color: #2d3748;
+      --text-muted: #718096;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding: 20px 10px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding: 30px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .header .subtitle {
+      color: var(--accent-color);
+      font-weight: bold;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .header h1 {
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: #feb2b2;
+      color: #9b2c2c;
+      font-size: 0.85rem;
+      font-weight: bold;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-top: 10px;
+    }
+
+    .section {
+      background-color: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      color: var(--primary-color);
+      margin-bottom: 12px;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 8px;
+    }
+
+    .workshop-item {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px dashed var(--border-color);
+    }
+
+    .workshop-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .workshop-time {
+      font-weight: bold;
+      color: #2b6cb0;
+    }
+
+    .workshop-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .notice {
+      font-size: 0.85rem;
+      color: #c53030;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-color);
+    }
+
+    .form-group label .required {
+      color: var(--accent-color);
+      margin-left: 4px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: #3182ce;
+      box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+    }
+
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .radio-label {
+      display: flex;
+      align-items: center;
+      padding: 10px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .radio-label:hover {
+      background-color: #edf2f7;
+    }
+
+    .radio-label input {
+      margin-right: 10px;
+    }
+
+    .radio-info {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 0.95rem;
+    }
+
+    .remaining {
+      color: var(--accent-color);
+      font-size: 0.85rem;
+      font-weight: bold;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background-color: #3182ce;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+      background-color: #2b6cb0;
+    }
+
+    .footer {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .footer a {
+      color: #3182ce;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 15px;
+      }
+      
+      .radio-info {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header class="header">
+      <div class="subtitle">新北文化大使 ✕ Young Young 都來街頭玩</div>
+      <h1>文化推廣工作坊報名</h1>
+      <p>填寫以下資料完成報名，錄取資訊將寄至你填寫的 Email</p>
+      <span class="badge">開放報名中</span>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">10/17（六）府中非常熱區｜三場文化推廣工作坊</h2>
+      <p style="font-size: 0.95rem; margin-bottom: 15px;">
+        這次帶大家從不同地方特色出發，透過手作體驗認識坪林、林口與淡水的地方文化。三場工作坊各有不同主題，從茶葉拓印、地方明信片，到具有淡水特色的頭旗設計，讓地方故事變成可以帶回家的創意作品！
+      </p>
+
+      <div class="workshop-item">
+        <div class="workshop-time">🕓 16:00－17:00｜坪林 × 茶葉拓印體驗</div>
+        <div class="workshop-desc">運用坪林茶葉的特色進行拓印創作，透過簡單有趣的手作方式，感受茶鄉文化。</div>
+      </div>
+
+      <div class="workshop-item">
+        <div class="workshop-time">🕔 17:00－18:00｜林口 × 手作地方明信片</div>
+        <div class="workshop-desc">以林口的地方特色為靈感，設計一張屬於自己的地方明信片，把街區記憶帶回家。</div>
+      </div>
+
+      <div class="workshop-item">
+        <div class="workshop-time">🕕 18:00－19:30｜淡水 × 頭旗明信片</div>
+        <div class="workshop-desc">認識淡水獨具特色的頭旗文化，將傳統元素融入明信片創作，打造一張專屬於淡水的紀念作品。</div>
+      </div>
+
+      <div class="notice">
+        📌 每場正取 16 人、備取 4 人<br>
+        ⚠️ 名額有限，額滿即關閉報名！
+      </div>
+    </section>
+
+    <form id="registrationForm">
+      <h2 class="section-title">填寫報名資料</h2>
+
+      <div class="form-group">
+        <label for="fullname">姓名<span class="required">*</span></label>
+        <input type="text" id="fullname" name="fullname" class="form-control" required placeholder="請輸入姓名">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email<span class="required">*</span></label>
+        <input type="email" id="email" name="email" class="form-control" required placeholder="example@email.com">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">手機號碼<span class="required">*</span></label>
+        <input type="tel" id="phone" name="phone" class="form-control" required placeholder="0912345678">
+      </div>
+
+      <div class="form-group">
+        <label for="grade">年級／身份<span class="required">*</span></label>
+        <select id="grade" name="grade" class="form-control" required>
+          <option value="" disabled selected>(請選擇)</option>
+          <option value="國小">國小</option>
+          <option value="國中">國中</option>
+          <option value="高中職一年級">高中職一年級</option>
+          <option value="高中職二年級">高中職二年級</option>
+          <option value="高中職三年級">高中職三年級</option>
+          <option value="大學一年級">大學一年級</option>
+          <option value="大學二年級">大學二年級</option>
+          <option value="大學三年級">大學三年級</option>
+          <option value="大學四年級">大學四年級</option>
+          <option value="研究生">研究生</option>
+          <option value="社會人士">社會人士</option>
+          <option value="其他">其他</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="nationality">國籍<span class="required">*</span></label>
+        <input type="text" id="nationality" name="nationality" class="form-control" required placeholder="例：台灣">
+      </div>
+
+      <div class="form-group">
+        <label for="gender">性別<span class="required">*</span></label>
+        <select id="gender" name="gender" class="form-control" required>
+          <option value="" disabled selected>(請選擇)</option>
+          <option value="女">女</option>
+          <option value="男">男</option>
+          <option value="其他">其他</option>
+          <option value="不願透露">不願透露</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="age">年齡區間<span class="required">*</span></label>
+        <select id="age" name="age" class="form-control" required>
+          <option value="" disabled selected>(請選擇)</option>
+          <option value="12歲以下">12歲以下</option>
+          <option value="13–15歲">13–15歲</option>
+          <option value="16–18歲">16–18歲</option>
+          <option value="19–22歲">19–22歲</option>
+          <option value="23–29歲">23–29歲</option>
+          <option value="30–39歲">30–39歲</option>
+          <option value="40–49歲">40–49歲</option>
+          <option value="50歲以上">50歲以上</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>參與場次（三選一）<span class="required">*</span></label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="session" value="C01" required>
+            <div class="radio-info">
+              <span><strong>C01 坪林｜茶葉拓印</strong> 10/17（六）16:00–17:00</span>
+              <span class="remaining">正取剩 16 位</span>
+            </div>
+          </label>
+
+          <label class="radio-label">
+            <input type="radio" name="session" value="C02">
+            <div class="radio-info">
+              <span><strong>C02 林口｜手作地方明信片</strong> 10/17（六）17:00–18:00</span>
+              <span class="remaining">正取剩 16 位</span>
+            </div>
+          </label>
+
+          <label class="radio-label">
+            <input type="radio" name="session" value="C03">
+            <div class="radio-info">
+              <span><strong>C03 淡水｜頭旗明信片</strong> 10/17（六）18:00–19:30</span>
+              <span class="remaining">正取剩 16 位</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">送出報名 🎉</button>
+      <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 8px;">
+        所有欄位均為必填。額滿的場次將自動關閉選項。
+      </p>
+    </form>
+
+    <footer class="footer">
+      <p>新北市國際青年文化交流計畫</p>
+      <p>📧 聯絡我們：<a href="mailto:ntpcca@wceo.org">ntpcca@wceo.org</a></p>
+      <p>📱 IG 看更多：<a href="https://www.instagram.com/ntpcyouthculture/" target="_blank">@ntpcyouthculture</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>
